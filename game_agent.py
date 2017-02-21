@@ -123,7 +123,6 @@ class CustomPlayer:
         # move from the game board (i.e., an opening book), or returning
         # immediately if there are no legal moves
         search_method = self.minimax if self.method is 'minimax' else self.alphabeta
-        current_depth = 1
         best_move = (-1, -1)
         if not legal_moves:
             return best_move
@@ -134,13 +133,15 @@ class CustomPlayer:
             # here in order to avoid timeout. The try/except block will
             # automatically catch the exception raised by the search method
             # when the timer gets close to expiring
-            _, best_move = search_method(game, current_depth)
+            if not self.iterative:
+                _, best_move = search_method(game, self.search_depth)
             # Perform iterative deepening. On timeout, the best move calculated
             # thus far will be returned.
-            if self.iterative:
+            else:
+                current_depth = 1
                 while True:
-                    current_depth += 1
                     _, best_move = search_method(game, current_depth)
+                    current_depth += 1
 
             return best_move
 
