@@ -36,9 +36,10 @@ def custom_score(game, player):
     float
         The heuristic value of the current game state to the specified player.
     """
-
-    # TODO: finish this function!
-    raise NotImplementedError
+    # TODO: This is just a placeholder. Make this better.
+    my_moves = game.get_legal_moves(player)
+    opponent_moves = game.get_legal_moves(game.get_opponent(player))
+    return float(len(my_moves) - len(opponent_moves))
 
 
 class CustomPlayer:
