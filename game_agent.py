@@ -181,19 +181,25 @@ class CustomPlayer:
         """
         if self.time_left() < self.TIMER_THRESHOLD:
             raise Timeout()
+        # assume player we care about is the maximizing player
         player = game.active_player if maximizing_player else game.get_opponent(game.active_player)
-        if not game.get_legal_moves():
+        legal_moves = game.get_legal_moves()
+        in_terminal_state = not legal_moves
+
+        # Base cases
+        if in_terminal_state:
             return game.utility(player), (-1, -1)
         if depth is 0:
             return self.score(game, player), (-1, -1)
-        moves = game.get_legal_moves()
+
+        # Apply minimax decision to DFS of child scores
         child_scores, _ = zip(*[
             self.minimax(game.forecast_move(move), depth - 1, not maximizing_player)
-            for move in moves
+            for move in legal_moves
         ])
-        child_scores_and_moves = list(zip(child_scores, moves))
-        minimax = max if maximizing_player else min
-        return minimax(child_scores_and_moves, key=self._get_score)
+        child_scores_and_moves = list(zip(child_scores, legal_moves))
+        minimax_decision = max if maximizing_player else min
+        return minimax_decision(child_scores_and_moves, key=self._get_score)
 
     def alphabeta(self, game, depth, alpha=float("-inf"), beta=float("inf"), maximizing_player=True):
         """Implement minimax search with alpha-beta pruning as described in the
@@ -235,9 +241,26 @@ class CustomPlayer:
         """
         if self.time_left() < self.TIMER_THRESHOLD:
             raise Timeout()
-
         # TODO: finish this function!
-        raise NotImplementedError
+        # assume player we care about is the maximizing player
+        player = game.active_player if maximizing_player else game.get_opponent(game.active_player)
+        legal_moves = game.get_legal_moves()
+        in_terminal_state = not legal_moves
+
+        # Base cases
+        if in_terminal_state:
+            return game.utility(player), (-1, -1)
+        if depth is 0:
+            return self.score(game, player), (-1, -1)
+
+        # Apply minimax decision to DFS of child scores
+        child_scores, _ = zip(*[
+            self.alphabeta(game.forecast_move(move), depth - 1, not maximizing_player)
+            for move in legal_moves
+        ])
+        child_scores_and_moves = list(zip(child_scores, legal_moves))
+        minimax_decision = max if maximizing_player else min
+        return minimax_decision(child_scores_and_moves, key=self._get_score)
 
     @staticmethod
     def _get_score(search_method_result):
