@@ -118,25 +118,33 @@ class CustomPlayer:
 
         self.time_left = time_left
 
-        # TODO: finish this function!
-
         # Perform any required initializations, including selecting an initial
         # move from the game board (i.e., an opening book), or returning
         # immediately if there are no legal moves
+        search_method = self.minimax if self.method is 'minimax' else self.alphabeta
+        current_depth = 1
+        best_move = (-1, -1)
+        if not legal_moves:
+            return best_move
+        # TODO: Opening book
 
         try:
             # The search method call (alpha beta or minimax) should happen in
             # here in order to avoid timeout. The try/except block will
             # automatically catch the exception raised by the search method
             # when the timer gets close to expiring
-            pass
+            _, best_move = search_method(game, current_depth)
+            # Perform iterative deepening. On timeout, the best move calculated
+            # thus far will be returned.
+            if self.iterative:
+                while True:
+                    current_depth += 1
+                    _, best_move = search_method(game, current_depth)
+
+            return best_move
 
         except Timeout:
-            # Handle any actions required at timeout, if necessary
-            pass
-
-        # Return the best move from the last completed search iteration
-        raise NotImplementedError
+            return best_move
 
     def minimax(self, game, depth, maximizing_player=True):
         """Implement the minimax search algorithm as described in the lectures.
