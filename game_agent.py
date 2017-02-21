@@ -171,9 +171,19 @@ class CustomPlayer:
         """
         if self.time_left() < self.TIMER_THRESHOLD:
             raise Timeout()
-
-        # TODO: finish this function!
-        raise NotImplementedError
+        player = game.active_player if maximizing_player else game.get_opponent(game.active_player)
+        if not game.get_legal_moves():
+            return game.utility(player), (-1, -1)
+        if depth is 0:
+            return self.score(game, player), (-1, -1)
+        moves = game.get_legal_moves()
+        child_scores, _ = zip(*[
+            self.minimax(game.forecast_move(move), depth - 1, not maximizing_player)
+            for move in moves
+        ])
+        child_scores_and_moves = list(zip(child_scores, moves))
+        minimax = max if maximizing_player else min
+        return minimax(child_scores_and_moves, key=self._get_score)
 
     def alphabeta(self, game, depth, alpha=float("-inf"), beta=float("inf"), maximizing_player=True):
         """Implement minimax search with alpha-beta pruning as described in the
@@ -218,3 +228,8 @@ class CustomPlayer:
 
         # TODO: finish this function!
         raise NotImplementedError
+
+    @staticmethod
+    def _get_score(search_method_result):
+        score, _ = search_method_result
+        return score
