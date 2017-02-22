@@ -241,26 +241,35 @@ class CustomPlayer:
         """
         if self.time_left() < self.TIMER_THRESHOLD:
             raise Timeout()
-        # TODO: finish this function!
         # assume player we care about is the maximizing player
         player = game.active_player if maximizing_player else game.get_opponent(game.active_player)
         legal_moves = game.get_legal_moves()
         in_terminal_state = not legal_moves
+        best_move = (-1, -1)
 
         # Base cases
         if in_terminal_state:
-            return game.utility(player), (-1, -1)
+            return game.utility(player), best_move
         if depth is 0:
-            return self.score(game, player), (-1, -1)
+            return self.score(game, player), best_move
 
-        # Apply minimax decision to DFS of child scores
-        child_scores, _ = zip(*[
-            self.alphabeta(game.forecast_move(move), depth - 1, not maximizing_player)
-            for move in legal_moves
-        ])
-        child_scores_and_moves = list(zip(child_scores, legal_moves))
-        minimax_decision = max if maximizing_player else min
-        return minimax_decision(child_scores_and_moves, key=self._get_score)
+        overall_score = float('-inf') if maximizing_player else float('inf')
+        for move in legal_moves:
+            score, _ = self.alphabeta(game.forecast_move(move), depth - 1, alpha, beta, not maximizing_player)
+            if maximizing_player:
+                if score > overall_score:
+                    overall_score = score
+                    best_move = move
+                alpha = max(alpha, score)
+            else:
+                if score < overall_score:
+                    overall_score = score
+                    best_move = move
+                beta = min(beta, score)
+            if beta <= alpha:
+                break
+
+        return overall_score, best_move
 
     @staticmethod
     def _get_score(search_method_result):
