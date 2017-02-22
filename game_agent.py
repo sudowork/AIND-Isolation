@@ -36,7 +36,14 @@ def custom_score(game, player):
     float
         The heuristic value of the current game state to the specified player.
     """
-    # TODO: This is just a placeholder. Make this better.
+    return difference_in_moves(game, player)
+
+
+def difference_in_moves(game, player):
+    utility = game.utility(player)
+    in_terminal_state = utility is not 0.
+    if in_terminal_state:
+        return utility
     my_moves = game.get_legal_moves(player)
     opponent_moves = game.get_legal_moves(game.get_opponent(player))
     return float(len(my_moves) - len(opponent_moves))
@@ -187,9 +194,7 @@ class CustomPlayer:
         in_terminal_state = not legal_moves
 
         # Base cases
-        if in_terminal_state:
-            return game.utility(player), (-1, -1)
-        if depth is 0:
+        if depth is 0 or in_terminal_state:
             return self.score(game, player), (-1, -1)
 
         # Apply minimax decision to DFS of child scores
@@ -248,10 +253,8 @@ class CustomPlayer:
         best_move = (-1, -1)
 
         # Base cases
-        if in_terminal_state:
-            return game.utility(player), best_move
-        if depth is 0:
-            return self.score(game, player), best_move
+        if depth is 0 or in_terminal_state:
+            return self.score(game, player), (-1, -1)
 
         overall_score = float('-inf') if maximizing_player else float('inf')
         for move in legal_moves:
