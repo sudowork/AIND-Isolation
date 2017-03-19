@@ -39,14 +39,22 @@ def custom_score(game, player):
     return difference_in_moves(game, player)
 
 
-def difference_in_moves(game, player):
+def aggressive_score(game, player):
+    return difference_in_moves(game, player, alpha=2.0)
+
+
+def defensive_score(game, player):
+    return difference_in_moves(game, player, beta=2.0)
+
+
+def difference_in_moves(game, player, alpha=1.0, beta=1.0):
     utility = game.utility(player)
     in_terminal_state = utility is not 0.
     if in_terminal_state:
         return utility
     my_moves = game.get_legal_moves(player)
     opponent_moves = game.get_legal_moves(game.get_opponent(player))
-    return float(len(my_moves) - len(opponent_moves))
+    return alpha * len(my_moves) - beta * len(opponent_moves)
 
 
 class CustomPlayer:
