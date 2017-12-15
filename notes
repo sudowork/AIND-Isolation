@@ -1,0 +1,119 @@
+*************************
+ Evaluating: ID_Improved
+*************************
+
+Playing Matches:
+----------
+  Match 1: ID_Improved vs   Random    	Result: 18 to 2
+  Match 2: ID_Improved vs   MM_Null   	Result: 16 to 4
+  Match 3: ID_Improved vs   MM_Open   	Result: 13 to 7
+  Match 4: ID_Improved vs MM_Improved 	Result: 13 to 7
+  Match 5: ID_Improved vs   AB_Null   	Result: 15 to 5
+tournament.py:100: UserWarning: One or more agents lost a match this round due to timeout. The get_move() function must return before time_left() reaches 0 ms. You will need to leave some time for the function to return, and may need to increase this margin to avoid timeouts during  tournament play.
+  warnings.warn(TIMEOUT_WARNING)
+  Match 6: ID_Improved vs   AB_Open   	Result: 15 to 5
+  Match 7: ID_Improved vs AB_Improved 	Result: 9 to 11
+
+
+Results:
+----------
+ID_Improved         70.71%
+
+*************************
+   Evaluating: Student (difference_in_moves)
+*************************
+
+Playing Matches:
+----------
+  Match 1:   Student   vs   Random    	Result: 15 to 5
+  Match 2:   Student   vs   MM_Null   	Result: 16 to 4
+  Match 3:   Student   vs   MM_Open   	Result: 13 to 7
+  Match 4:   Student   vs MM_Improved 	Result: 12 to 8
+  Match 5:   Student   vs   AB_Null   	Result: 15 to 5
+  Match 6:   Student   vs   AB_Open   	Result: 14 to 6
+  Match 7:   Student   vs AB_Improved 	Result: 8 to 12
+
+
+Results:
+----------
+Student             66.43%
+
+*************************
+Evaluating: Student (aggressive)
+*************************
+
+Playing Matches:
+----------
+  Match 1: Student (aggressive) vs   Random    	Result: 16 to 4
+  Match 2: Student (aggressive) vs   MM_Null   	Result: 11 to 9
+  Match 3: Student (aggressive) vs   MM_Open   	Result: 10 to 10
+  Match 4: Student (aggressive) vs MM_Improved 	Result: 11 to 9
+tournament.py:100: UserWarning: One or more agents lost a match this round due to timeout. The get_move() function must return before time_left() reaches 0 ms. You will need to leave some time for the function to return, and may need to increase this margin to avoid timeouts during  tournament play.
+  warnings.warn(TIMEOUT_WARNING)
+  Match 5: Student (aggressive) vs   AB_Null   	Result: 12 to 8
+  Match 6: Student (aggressive) vs   AB_Open   	Result: 11 to 9
+  Match 7: Student (aggressive) vs AB_Improved 	Result: 9 to 11
+
+
+Results:
+----------
+Student (aggressive)     57.14%
+
+*************************
+Evaluating: Student (defensive)
+*************************
+
+Playing Matches:
+----------
+  Match 1: Student (defensive) vs   Random    	Result: 13 to 7
+  Match 2: Student (defensive) vs   MM_Null   	Result: 12 to 8
+  Match 3: Student (defensive) vs   MM_Open   	Result: 12 to 8
+  Match 4: Student (defensive) vs MM_Improved 	Result: 15 to 5
+  Match 5: Student (defensive) vs   AB_Null   	Result: 11 to 9
+  Match 6: Student (defensive) vs   AB_Open   	Result: 13 to 7
+  Match 7: Student (defensive) vs AB_Improved 	Result: 8 to 12
+
+
+Results:
+----------
+Student (defensive)     60.00%
+
+*************************
+Evaluating: Student (defensive -> aggressive)
+*************************
+
+Playing Matches:
+----------
+  Match 1: Student (defensive -> aggressive) vs   Random    	Result: 14 to 6
+  Match 2: Student (defensive -> aggressive) vs   MM_Null   	Result: 10 to 10
+  Match 3: Student (defensive -> aggressive) vs   MM_Open   	Result: 10 to 10
+  Match 4: Student (defensive -> aggressive) vs MM_Improved 	Result: 9 to 11
+  Match 5: Student (defensive -> aggressive) vs   AB_Null   	Result: 11 to 9
+  Match 6: Student (defensive -> aggressive) vs   AB_Open   	Result: 12 to 8
+  Match 7: Student (defensive -> aggressive) vs AB_Improved 	Result: 10 to 10
+
+
+Results:
+----------
+Student (defensive -> aggressive)     54.29%
+
+*************************
+Evaluating: Student (aggressive -> defensive)
+*************************
+
+Playing Matches:
+----------
+  Match 1: Student (aggressive -> defensive) vs   Random    	Result: 13 to 7
+  Match 2: Student (aggressive -> defensive) vs   MM_Null   	Result: 12 to 8
+  Match 3: Student (aggressive -> defensive) vs   MM_Open   	Result: 11 to 9
+tournament.py:101: UserWarning: One or more agents lost a match this round due to timeout. The get_move() function must return before time_left() reaches 0 ms. You will need to leave some time for the function to return, and may need to increase this margin to avoid timeouts during  tournament play.
+  warnings.warn(TIMEOUT_WARNING)
+  Match 4: Student (aggressive -> defensive) vs MM_Improved 	Result: 7 to 13
+  Match 5: Student (aggressive -> defensive) vs   AB_Null   	Result: 10 to 10
+  Match 6: Student (aggressive -> defensive) vs   AB_Open   	Result: 12 to 8
+  Match 7: Student (aggressive -> defensive) vs AB_Improved 	Result: 8 to 12
+
+
+Results:
+----------
+Student (aggressive -> defensive)     52.14%

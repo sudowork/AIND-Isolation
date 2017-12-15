@@ -1,0 +1,145 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+Agent	tournament.py	/^Agent = namedtuple("Agent", ["player", "name"])$/;"	kind:variable	line:58
+BLANK	isolation/isolation.py	/^    BLANK = 0$/;"	kind:variable	line:41
+Board	isolation/__init__.py	/^from .isolation import Board$/;"	kind:namespace	line:13
+Board	isolation/isolation.py	/^class Board(object):$/;"	kind:class	line:20
+Board	sample_players.py	/^    from isolation import Board$/;"	kind:namespace	line:229
+Board	tournament.py	/^from isolation import Board$/;"	kind:namespace	line:28
+Counter	agent_test.py	/^from collections import Counter$/;"	kind:namespace	line:18
+CounterBoard	agent_test.py	/^class CounterBoard(isolation.Board):$/;"	kind:class	line:173
+CustomPlayer	game_agent.py	/^class CustomPlayer:$/;"	kind:class	line:82
+CustomPlayer	tournament.py	/^from game_agent import CustomPlayer$/;"	kind:namespace	line:33
+DynamicTimer	agent_test.py	/^        class DynamicTimer():$/;"	kind:class	line:491
+GreedyPlayer	sample_players.py	/^class GreedyPlayer():$/;"	kind:class	line:132
+HumanPlayer	sample_players.py	/^class HumanPlayer():$/;"	kind:class	line:173
+NOT_MOVED	isolation/isolation.py	/^    NOT_MOVED = None$/;"	kind:variable	line:42
+NUM_MATCHES	tournament.py	/^NUM_MATCHES = 5  # number of matches against each opponent$/;"	kind:variable	line:37
+Project1Test	agent_test.py	/^class Project1Test(unittest.TestCase):$/;"	kind:class	line:216
+Queue	agent_test.py	/^from queue import Queue$/;"	kind:namespace	line:22
+QueueEmptyError	agent_test.py	/^from queue import Empty as QueueEmptyError$/;"	kind:namespace	line:25
+RandomPlayer	sample_players.py	/^class RandomPlayer():$/;"	kind:class	line:99
+RandomPlayer	tournament.py	/^from sample_players import RandomPlayer$/;"	kind:namespace	line:29
+TIMEOUT_WARNING	tournament.py	/^                  "tournament play."$/;"	kind:variable	line:45
+TIMER_MARGIN	agent_test.py	/^TIMER_MARGIN = 15  # time (in ms) to leave on the timer to avoid timeout$/;"	kind:variable	line:62
+TIME_LIMIT	tournament.py	/^TIME_LIMIT = 150  # number of milliseconds before timeout$/;"	kind:variable	line:38
+TIME_LIMIT_MILLIS	isolation/isolation.py	/^TIME_LIMIT_MILLIS = 200$/;"	kind:variable	line:17
+Thread	agent_test.py	/^from threading import Thread$/;"	kind:namespace	line:23
+Timeout	game_agent.py	/^class Timeout(Exception):$/;"	kind:class	line:12
+TimeoutError	agent_test.py	/^from multiprocessing import TimeoutError$/;"	kind:namespace	line:24
+__get_moves__	isolation/isolation.py	/^    def __get_moves__(self, move):$/;"	kind:member	line:250
+__init__	agent_test.py	/^            def __init__(self, time_limit):$/;"	kind:member	line:498
+__init__	agent_test.py	/^    def __init__(self, *args, **kwargs):$/;"	kind:member	line:181
+__init__	game_agent.py	/^    def __init__(self, search_depth=3, score_fn=custom_score,$/;"	kind:member	line:112
+__init__	isolation/isolation.py	/^    def __init__(self, player_1, player_2, width=7, height=7):$/;"	kind:member	line:44
+__init__	sample_players.py	/^    def __init__(self, score_fn=open_move_score):$/;"	kind:member	line:137
+__init__.py	isolation/__init__.py	1;"	kind:file	line:1
+_get_score	game_agent.py	/^    def _get_score(search_method_result):$/;"	kind:member	line:308
+active_player	isolation/isolation.py	/^    def active_player(self):$/;"	kind:member	line:57
+agent_test.py	agent_test.py	1;"	kind:file	line:1
+aggressive_score	game_agent.py	/^def aggressive_score(game, player):$/;"	kind:function	line:46
+aggressive_score	tournament.py	/^from game_agent import custom_score, difference_in_moves, aggressive_score, defensive_score, very_aggressive_score$/;"	kind:namespace	line:34
+aggressive_to_defensive	game_agent.py	/^def aggressive_to_defensive(game, player):$/;"	kind:function	line:63
+aggressive_to_defensive	tournament.py	/^from game_agent import defensive_to_aggressive, aggressive_to_defensive$/;"	kind:namespace	line:35
+alphabeta	game_agent.py	/^    def alphabeta(self, game, depth, alpha=float("-inf"), beta=float("inf"), maximizing_player=True):$/;"	kind:member	line:239
+apply_move	isolation/isolation.py	/^    def apply_move(self, move):$/;"	kind:member	line:188
+chosen_move	agent_test.py	/^            chosen_move = agentUT.get_move(board, legal_moves, timer.time_left)$/;"	kind:variable	line:528
+copy	agent_test.py	/^    def copy(self):$/;"	kind:member	line:187
+copy	agent_test.py	/^from copy import copy$/;"	kind:namespace	line:20
+copy	isolation/isolation.py	/^    def copy(self):$/;"	kind:member	line:94
+copy	isolation/isolation.py	/^from copy import copy$/;"	kind:namespace	line:14
+counts	agent_test.py	/^    def counts(self):$/;"	kind:member	line:211
+curr_time_millis	agent_test.py	/^def curr_time_millis():$/;"	kind:function	line:65
+custom_score	game_agent.py	/^def custom_score(game, player):$/;"	kind:function	line:17
+custom_score	tournament.py	/^from game_agent import custom_score, difference_in_moves, aggressive_score, defensive_score, very_aggressive_score$/;"	kind:namespace	line:34
+deepcopy	agent_test.py	/^from copy import deepcopy$/;"	kind:namespace	line:19
+deepcopy	isolation/isolation.py	/^from copy import deepcopy$/;"	kind:namespace	line:13
+defensive_score	game_agent.py	/^def defensive_score(game, player):$/;"	kind:function	line:50
+defensive_score	tournament.py	/^from game_agent import custom_score, difference_in_moves, aggressive_score, defensive_score, very_aggressive_score$/;"	kind:namespace	line:34
+defensive_to_aggressive	game_agent.py	/^def defensive_to_aggressive(game, player):$/;"	kind:function	line:54
+defensive_to_aggressive	tournament.py	/^from game_agent import defensive_to_aggressive, aggressive_to_defensive$/;"	kind:namespace	line:35
+diff_total	agent_test.py	/^            diff_total = abs(board.counts[0] - exact_counts[idx][0])$/;"	kind:variable	line:530
+diff_unique	agent_test.py	/^            diff_unique = abs(board.counts[1] - exact_counts[idx][1])$/;"	kind:variable	line:531
+difference_in_moves	game_agent.py	/^def difference_in_moves(game, player, my_move_weight=1.0, their_move_weight=1.0):$/;"	kind:function	line:72
+difference_in_moves	tournament.py	/^from game_agent import custom_score, difference_in_moves, aggressive_score, defensive_score, very_aggressive_score$/;"	kind:namespace	line:34
+eval_fn	agent_test.py	/^            eval_fn = makeEvalStop(exact_counts[idx][0], timer, time_limit)$/;"	kind:variable	line:523
+forecast_move	agent_test.py	/^    def forecast_move(self, move):$/;"	kind:member	line:201
+forecast_move	isolation/isolation.py	/^    def forecast_move(self, move):$/;"	kind:member	line:105
+game	sample_players.py	/^    game = Board(player1, player2)$/;"	kind:variable	line:234
+game_agent	agent_test.py	/^import game_agent$/;"	kind:namespace	line:16
+game_agent.py	game_agent.py	1;"	kind:file	line:1
+game_as_text	isolation/__init__.py	/^def game_as_text(winner, move_history, termination="", board=Board(1, 2)):$/;"	kind:function	line:16
+get_blank_spaces	isolation/isolation.py	/^    def get_blank_spaces(self):$/;"	kind:member	line:145
+get_legal_moves	isolation/isolation.py	/^    def get_legal_moves(self, player=None):$/;"	kind:member	line:168
+get_move	game_agent.py	/^    def get_move(self, game, legal_moves, time_left):$/;"	kind:member	line:121
+get_move	sample_players.py	/^    def get_move(self, game, legal_moves, time_left):$/;"	kind:member	line:102
+get_move	sample_players.py	/^    def get_move(self, game, legal_moves, time_left):$/;"	kind:member	line:140
+get_move	sample_players.py	/^    def get_move(self, game, legal_moves, time_left):$/;"	kind:member	line:176
+get_opponent	isolation/isolation.py	/^    def get_opponent(self, player):$/;"	kind:member	line:72
+get_player_location	isolation/isolation.py	/^    def get_player_location(self, player):$/;"	kind:member	line:152
+handler	agent_test.py	/^def handler(obj, testcase, queue):$/;"	kind:function	line:70
+improved_score	sample_players.py	/^def improved_score(game, player):$/;"	kind:function	line:67
+improved_score	tournament.py	/^from sample_players import improved_score$/;"	kind:namespace	line:32
+inactive_player	isolation/isolation.py	/^    def inactive_player(self):$/;"	kind:member	line:65
+initAUT	agent_test.py	/^    def initAUT(self, depth, eval_fn, iterative=False,$/;"	kind:member	line:218
+io	isolation/__init__.py	/^import io$/;"	kind:namespace	line:10
+is_loser	isolation/isolation.py	/^    def is_loser(self, player):$/;"	kind:member	line:212
+is_winner	isolation/isolation.py	/^    def is_winner(self, player):$/;"	kind:member	line:208
+isolation	agent_test.py	/^import isolation$/;"	kind:namespace	line:15
+isolation.py	isolation/isolation.py	1;"	kind:file	line:1
+itertools	tournament.py	/^import itertools$/;"	kind:namespace	line:22
+legal_moves	agent_test.py	/^            legal_moves = board.get_legal_moves()$/;"	kind:variable	line:527
+main	tournament.py	/^def main():$/;"	kind:function	line:139
+makeBranchEval	agent_test.py	/^def makeBranchEval(first_branch):$/;"	kind:function	line:153
+makeEvalStop	agent_test.py	/^def makeEvalStop(limit, timer, value=None):$/;"	kind:function	line:132
+makeEvalTable	agent_test.py	/^def makeEvalTable(table):$/;"	kind:function	line:116
+minimax	game_agent.py	/^    def minimax(self, game, depth, maximizing_player=True):$/;"	kind:member	line:188
+move_is_legal	isolation/isolation.py	/^    def move_is_legal(self, move):$/;"	kind:member	line:125
+namedtuple	tournament.py	/^from collections import namedtuple$/;"	kind:namespace	line:26
+new_game	sample_players.py	/^    new_game = game.forecast_move((1, 1))$/;"	kind:variable	line:252
+null_score	sample_players.py	/^def null_score(game, player):$/;"	kind:function	line:8
+null_score	tournament.py	/^from sample_players import null_score$/;"	kind:namespace	line:30
+open_move_score	sample_players.py	/^def open_move_score(game, player):$/;"	kind:function	line:38
+open_move_score	tournament.py	/^from sample_players import open_move_score$/;"	kind:namespace	line:31
+play	isolation/isolation.py	/^    def play(self, time_limit=TIME_LIMIT_MILLIS):$/;"	kind:member	line:302
+play_match	tournament.py	/^def play_match(player1, player2):$/;"	kind:function	line:61
+play_round	tournament.py	/^def play_round(agents, num_matches):$/;"	kind:function	line:106
+player1	sample_players.py	/^    player1 = RandomPlayer()$/;"	kind:variable	line:232
+player2	sample_players.py	/^    player2 = GreedyPlayer()$/;"	kind:variable	line:233
+print_board	isolation/isolation.py	/^    def print_board(self):$/;"	kind:member	line:268
+randint	sample_players.py	/^from random import randint$/;"	kind:namespace	line:5
+random	agent_test.py	/^import random$/;"	kind:namespace	line:10
+random	game_agent.py	/^import random$/;"	kind:namespace	line:9
+random	tournament.py	/^import random$/;"	kind:namespace	line:23
+sample_players.py	sample_players.py	1;"	kind:file	line:1
+score	agent_test.py	/^    def score(game, player):$/;"	kind:function	line:125
+score	agent_test.py	/^    def score(game, player):$/;"	kind:function	line:142
+score	agent_test.py	/^    def score(game, player):$/;"	kind:function	line:163
+sys	agent_test.py	/^import sys$/;"	kind:namespace	line:13
+testWrapper	agent_test.py	/^        def testWrapper(self):$/;"	kind:function	line:94
+test_alphabeta	agent_test.py	/^    def test_alphabeta(self):$/;"	kind:member	line:427
+test_alphabeta_interface	agent_test.py	/^    def test_alphabeta_interface(self):$/;"	kind:member	line:279
+test_get_move	agent_test.py	/^    def test_get_move(self):$/;"	kind:member	line:482
+test_get_move_interface	agent_test.py	/^    def test_get_move_interface(self):$/;"	kind:member	line:310
+test_heuristic	agent_test.py	/^    def test_heuristic(self):$/;"	kind:member	line:232
+test_minimax	agent_test.py	/^    def test_minimax(self):$/;"	kind:member	line:362
+test_minimax_interface	agent_test.py	/^    def test_minimax_interface(self):$/;"	kind:member	line:248
+time_left	agent_test.py	/^            def time_left(self):$/;"	kind:member	line:502
+time_limit	agent_test.py	/^            time_limit = 1e4$/;"	kind:variable	line:521
+timeit	agent_test.py	/^import timeit$/;"	kind:namespace	line:12
+timeit	isolation/isolation.py	/^import timeit$/;"	kind:namespace	line:11
+timeout	agent_test.py	/^def timeout(time_limit):$/;"	kind:function	line:80
+timer	agent_test.py	/^            timer = DynamicTimer(time_limit)$/;"	kind:variable	line:522
+to_string	isolation/isolation.py	/^    def to_string(self):$/;"	kind:member	line:272
+tournament.py	tournament.py	1;"	kind:file	line:1
+unittest	agent_test.py	/^import unittest$/;"	kind:namespace	line:11
+utility	isolation/isolation.py	/^    def utility(self, player):$/;"	kind:member	line:216
+very_aggressive_score	game_agent.py	/^def very_aggressive_score(game, player):$/;"	kind:function	line:42
+very_aggressive_score	tournament.py	/^from game_agent import custom_score, difference_in_moves, aggressive_score, defensive_score, very_aggressive_score$/;"	kind:namespace	line:34
+warnings	tournament.py	/^import warnings$/;"	kind:namespace	line:24
+wrapUnitTest	agent_test.py	/^    def wrapUnitTest(testcase):$/;"	kind:function	line:91
+wraps	agent_test.py	/^from functools import wraps$/;"	kind:namespace	line:21

@@ -36,25 +36,47 @@ def custom_score(game, player):
     float
         The heuristic value of the current game state to the specified player.
     """
-    return difference_in_moves(game, player)
+    return aggressive_score(game, player)
+
+
+def very_aggressive_score(game, player):
+    return difference_in_moves(game, player, my_move_weight=3.0)
 
 
 def aggressive_score(game, player):
-    return difference_in_moves(game, player, alpha=2.0)
+    return difference_in_moves(game, player, my_move_weight=2.0)
 
 
 def defensive_score(game, player):
-    return difference_in_moves(game, player, beta=2.0)
+    return difference_in_moves(game, player, their_move_weight=2.0)
 
 
-def difference_in_moves(game, player, alpha=1.0, beta=1.0):
+def defensive_to_aggressive(game, player):
+    # sliding scale of 0.5 to 2.0 based on the progress of the game
+    spaces = game.width * game.height
+    progress = float(game.move_count) / spaces
+    base_my_move_weight = 0.5
+    my_move_weight = base_my_move_weight + progress * 1.5
+    return difference_in_moves(game, player, my_move_weight=my_move_weight)
+
+
+def aggressive_to_defensive(game, player):
+    # sliding scale of 2.0 to 0.5 based on the progress of the game
+    spaces = game.width * game.height
+    progress = float(game.move_count) / spaces
+    base_my_move_weight = 2.0
+    my_move_weight = base_my_move_weight - progress * 1.5
+    return difference_in_moves(game, player, my_move_weight=my_move_weight)
+
+
+def difference_in_moves(game, player, my_move_weight=1.0, their_move_weight=1.0):
     utility = game.utility(player)
     in_terminal_state = utility is not 0.
     if in_terminal_state:
         return utility
     my_moves = game.get_legal_moves(player)
     opponent_moves = game.get_legal_moves(game.get_opponent(player))
-    return alpha * len(my_moves) - beta * len(opponent_moves)
+    return my_move_weight * len(my_moves) - their_move_weight * len(opponent_moves)
 
 
 class CustomPlayer:
@@ -88,7 +110,7 @@ class CustomPlayer:
     """
 
     def __init__(self, search_depth=3, score_fn=custom_score,
-                 iterative=True, method='minimax', timeout=15.):
+                 iterative=True, method='minimax', timeout=20.):
         self.search_depth = search_depth
         self.iterative = iterative
         self.score = score_fn
